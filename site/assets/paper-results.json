@@ -1,0 +1,160 @@
+{
+  "source": "https://arxiv.org/html/2610.42002v2",
+  "table": 2,
+  "event_structure_scope": {
+    "conditions": 442,
+    "tasks": 34,
+    "aggregation": "task-macro percentages",
+    "judge": "GPT"
+  },
+  "reference_similarity_scope": {
+    "clips": 40,
+    "psnr_unit": "dB"
+  },
+  "models": [
+    {
+      "rank": 1,
+      "model": "Wan2.2-I2V-A14B",
+      "event": 27.98,
+      "structure": 34.38,
+      "psnr": 28.68,
+      "ssim": 0.9659,
+      "mean": 3.17
+    },
+    {
+      "rank": 2,
+      "model": "MiniMax-H3",
+      "event": 23.06,
+      "structure": 48.31,
+      "psnr": 28.38,
+      "ssim": 0.96,
+      "mean": 3.67
+    },
+    {
+      "rank": 3,
+      "model": "LingBot-World-Fast",
+      "event": 26.69,
+      "structure": 60.81,
+      "psnr": 21.88,
+      "ssim": 0.906,
+      "mean": 4.33
+    },
+    {
+      "rank": 4,
+      "model": "LTX-Video-2B",
+      "event": 18.41,
+      "structure": 38.13,
+      "psnr": 29.87,
+      "ssim": 0.9494,
+      "mean": 5.83
+    },
+    {
+      "rank": 5,
+      "model": "HunyuanVideo-1.5-I2V",
+      "event": 24.38,
+      "structure": 29.12,
+      "psnr": 26.37,
+      "ssim": 0.9301,
+      "mean": 6.0
+    },
+    {
+      "rank": 5,
+      "model": "Wan2.1-I2V-14B-480P",
+      "event": 22.53,
+      "structure": 41.84,
+      "psnr": 23.78,
+      "ssim": 0.9157,
+      "mean": 6.0
+    },
+    {
+      "rank": 7,
+      "model": "Cosmos3-Super",
+      "event": 21.1,
+      "structure": 51.55,
+      "psnr": 25.99,
+      "ssim": 0.9008,
+      "mean": 6.17
+    },
+    {
+      "rank": 8,
+      "model": "VBVR-Wan2.2",
+      "event": 17.66,
+      "structure": 32.66,
+      "psnr": 28.05,
+      "ssim": 0.9627,
+      "mean": 7.0
+    },
+    {
+      "rank": 9,
+      "model": "DynamiCrafter-1024",
+      "event": 16.87,
+      "structure": 59.01,
+      "psnr": 23.24,
+      "ssim": 0.9024,
+      "mean": 7.67
+    },
+    {
+      "rank": 10,
+      "model": "SVD-XT",
+      "event": 13.0,
+      "structure": 27.08,
+      "psnr": 27.3,
+      "ssim": 0.9446,
+      "mean": 9.67
+    },
+    {
+      "rank": 11,
+      "model": "CogVideoX-5B-I2V",
+      "event": 19.91,
+      "structure": 14.79,
+      "psnr": 18.64,
+      "ssim": 0.8716,
+      "mean": 10.17
+    },
+    {
+      "rank": 11,
+      "model": "SkyReels-V2-I2V-14B",
+      "event": 19.22,
+      "structure": 13.84,
+      "psnr": 18.14,
+      "ssim": 0.9214,
+      "mean": 10.17
+    },
+    {
+      "rank": 13,
+      "model": "I2VGen-XL",
+      "event": 15.56,
+      "structure": 7.65,
+      "psnr": 19.46,
+      "ssim": 0.8629,
+      "mean": 12.83
+    },
+    {
+      "rank": 14,
+      "model": "CogVideoX1.5-5B-I2V",
+      "event": 15.22,
+      "structure": 0.0,
+      "psnr": 18.54,
+      "ssim": 0.9086,
+      "mean": 13.33
+    },
+    {
+      "rank": 15,
+      "model": "HunyuanVideo-I2V-720P",
+      "event": 10.28,
+      "structure": 10.93,
+      "psnr": 16.95,
+      "ssim": 0.8566,
+      "mean": 14.33
+    },
+    {
+      "rank": 16,
+      "model": "SkyReels-V1-I2V",
+      "event": 4.21,
+      "structure": 5.27,
+      "psnr": 11.69,
+      "ssim": 0.6251,
+      "mean": 15.67
+    }
+  ]
+}

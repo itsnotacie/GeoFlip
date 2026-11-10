@@ -1,0 +1,6 @@
+Observe what ACTUALLY happens, not what physics predicts should happen. These {n} chronologically ordered images show the first {span:.3f} seconds. Do not infer outcome from shape or appearance alone.
+Task event: {event}. Labels: {labels}, other, uncertain.
+{definitions}
+other: clearly moves but does not match any listed label. uncertain: ambiguous, occluded, malformed, missing evidence, or camera motion prevents judgement. Never infer precise 3D COM or millimetres from images.
+Independently assess violation: clear (no visible violation), flagged (visible deformation, penetration, hovering, new hand/force or support changes), uncertain. Describe the evidence and frame indices. A partial or post-barrier roll is not the target event.
+Return ONLY JSON with label, violation, confidence (0..1), evidence (nonempty string).

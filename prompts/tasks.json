@@ -1,0 +1,454 @@
+{
+  "chair_tip": {
+    "event": "unambiguous overturning of the chair",
+    "allowed_labels": [
+      "stable",
+      "tipped"
+    ],
+    "label_definitions": {}
+  },
+  "slope_block": {
+    "event": "unambiguous overturning of the block",
+    "allowed_labels": [
+      "stable",
+      "tipped"
+    ],
+    "label_definitions": {}
+  },
+  "table_overhang": {
+    "event": "object visibly leaves its support and descends",
+    "allowed_labels": [
+      "fell",
+      "stable"
+    ],
+    "label_definitions": {}
+  },
+  "polygon_edge_rolling": {
+    "event": "rotation over at least one complete facet BEFORE contact with any endstop; sliding or partial rotation alone is not enough",
+    "allowed_labels": [
+      "edge_rolling",
+      "stable"
+    ],
+    "label_definitions": {}
+  },
+  "household_edge_overhang": {
+    "event": "the object slides off or tips off its support and ends resting lower, or stays put",
+    "allowed_labels": [
+      "fell",
+      "stable"
+    ],
+    "label_definitions": {}
+  },
+  "household_corner_overhang": {
+    "event": "the object tips or slides off the corner support and descends, or stays put",
+    "allowed_labels": [
+      "fell",
+      "stable"
+    ],
+    "label_definitions": {}
+  },
+  "household_bridge_support": {
+    "event": "the bridged object loses support and drops to the floor, or stays put",
+    "allowed_labels": [
+      "stable",
+      "tipped_to_floor"
+    ],
+    "label_definitions": {}
+  },
+  "household_top_stack_failure": {
+    "event": "the top element of a stack collapses or falls, or the stack stays intact",
+    "allowed_labels": [
+      "collapsed",
+      "stable"
+    ],
+    "label_definitions": {}
+  },
+  "household_collective_stack_failure": {
+    "event": "the whole stack collapses together, or stays intact",
+    "allowed_labels": [
+      "collective_failure",
+      "stable"
+    ],
+    "label_definitions": {}
+  },
+  "lever": {
+    "event": "a rigid lever with two equal attached weights, released from rest on a fixed axle",
+    "allowed_labels": [
+      "held",
+      "released"
+    ],
+    "label_definitions": {
+      "held": "lever absolute angle stays below 1 degree over the shown window",
+      "released": "right end of the lever rotates down more than 12 degrees within 3 s"
+    }
+  },
+  "wheel": {
+    "event": "a wheel on a surface, judged on its INITIAL direction of travel",
+    "allowed_labels": [
+      "roll_left",
+      "roll_right"
+    ],
+    "label_definitions": {
+      "roll_left": "wheel centre moves left by more than 8 mm within the first 0.4 s",
+      "roll_right": "wheel centre moves right by more than 8 mm within the first 0.4 s"
+    }
+  },
+  "collision": {
+    "event": "an incoming block hits a stationary one; the label describes the post-impact event",
+    "allowed_labels": [
+      "forward",
+      "rebound"
+    ],
+    "label_definitions": {
+      "forward": "moves forward (away from impact side)",
+      "rebound": "incoming block bounces back after impact (vx < -0.12 m/s post-impact)"
+    }
+  },
+  "hill_first_event": {
+    "event": "an object released on a hillside; the label is the FIRST event, not the terminal rest",
+    "allowed_labels": [
+      "cross",
+      "return"
+    ],
+    "label_definitions": {
+      "cross": "object passes over the crest to the far side",
+      "return": "object rolls back toward its release side without crossing the crest"
+    }
+  },
+  "spring_initial_response": {
+    "event": "an object next to a spring; the label is the INITIAL response in the first 0.1 s",
+    "allowed_labels": [
+      "approach",
+      "separate",
+      "stationary"
+    ],
+    "label_definitions": {
+      "approach": "object moves toward the spring / other object in the first 0.1 s",
+      "separate": "object moves away from the spring / other object in the first 0.1 s",
+      "stationary": "no visible initial motion"
+    }
+  },
+  "A_initial_slope_direction_at_0_2_s": {
+    "event": "which way member A starts moving along the slope in the first 0.2 s",
+    "allowed_labels": [
+      "downhill",
+      "uphill"
+    ],
+    "label_definitions": {
+      "downhill": "moves down the slope",
+      "uphill": "moves up the slope"
+    }
+  },
+  "base_direction_at_0_2_s": {
+    "event": "horizontal direction of the base body in the first 0.2 s",
+    "allowed_labels": [
+      "left",
+      "right"
+    ],
+    "label_definitions": {
+      "left": "moves toward image left in the stated window",
+      "right": "moves toward image right in the stated window"
+    }
+  },
+  "block_piston_separation_within_video_window": {
+    "event": "whether the block separates from the piston within the shown window",
+    "allowed_labels": [
+      "retained",
+      "separated"
+    ],
+    "label_definitions": {
+      "retained": "block stays attached to the piston",
+      "separated": "block leaves the piston"
+    }
+  },
+  "cart_horizontal_direction_at_0_4_s": {
+    "event": "horizontal direction of the cart in the first 0.4 s",
+    "allowed_labels": [
+      "left",
+      "right"
+    ],
+    "label_definitions": {
+      "left": "moves toward image left in the stated window",
+      "right": "moves toward image right in the stated window"
+    }
+  },
+  "does_pendulum_hit_target": {
+    "event": "whether the pendulum contacts the target at any point in the window",
+    "allowed_labels": [
+      "hit",
+      "miss"
+    ],
+    "label_definitions": {
+      "hit": "contact with the target occurs",
+      "miss": "no contact with the target occurs"
+    }
+  },
+  "left_block_direction_at_0_2_s": {
+    "event": "horizontal direction of the LEFT block in the first 0.2 s",
+    "allowed_labels": [
+      "left",
+      "right"
+    ],
+    "label_definitions": {
+      "left": "moves toward image left in the stated window",
+      "right": "moves toward image right in the stated window"
+    }
+  },
+  "left_payload_vertical_direction_at_1_s": {
+    "event": "vertical direction of the left payload around 1 s",
+    "allowed_labels": [
+      "left_down",
+      "left_up"
+    ],
+    "label_definitions": {
+      "left_down": "left payload moves downward",
+      "left_up": "left payload moves upward"
+    }
+  },
+  "pendulum_first_swing_hits_target": {
+    "event": "whether the first swing of the pendulum contacts the target",
+    "allowed_labels": [
+      "hit",
+      "miss"
+    ],
+    "label_definitions": {
+      "hit": "contact with the target occurs",
+      "miss": "no contact with the target occurs"
+    }
+  },
+  "projectile_x_direction_immediately_after_first_bar_impact": {
+    "event": "x direction of the projectile right after the first bar impact",
+    "allowed_labels": [
+      "backward",
+      "forward"
+    ],
+    "label_definitions": {
+      "backward": "moves backward after impact",
+      "forward": "moves forward (away from impact side)"
+    }
+  },
+  "right_block_absolute_direction_at_0_2_s": {
+    "event": "absolute horizontal direction of the RIGHT block in the first 0.2 s",
+    "allowed_labels": [
+      "left",
+      "right"
+    ],
+    "label_definitions": {
+      "left": "moves toward image left in the stated window",
+      "right": "moves toward image right in the stated window"
+    }
+  },
+  "right_payload_vertical_direction_at_1_s": {
+    "event": "vertical direction of the right payload around 1 s",
+    "allowed_labels": [
+      "right_down",
+      "right_up",
+      "stationary"
+    ],
+    "label_definitions": {
+      "right_down": "right payload moves downward",
+      "right_up": "right payload moves upward",
+      "stationary": "no visible initial motion"
+    }
+  },
+  "target_transverse_deflection_at_3s": {
+    "event": "whether the target shows transverse deflection by 3 s",
+    "allowed_labels": [
+      "deflected",
+      "straight"
+    ],
+    "label_definitions": {
+      "deflected": "target visibly bends/shifts transversely",
+      "straight": "target stays undeflected"
+    }
+  },
+  "upper_rod_direction_at_0_3_s": {
+    "event": "direction of the upper rod in the first 0.3 s",
+    "allowed_labels": [
+      "left",
+      "right"
+    ],
+    "label_definitions": {
+      "left": "moves toward image left in the stated window",
+      "right": "moves toward image right in the stated window"
+    }
+  },
+  "upper_rod_horizontal_direction_at_0_2_s": {
+    "event": "horizontal direction of the upper rod in the first 0.2 s",
+    "allowed_labels": [
+      "left",
+      "right"
+    ],
+    "label_definitions": {
+      "left": "moves toward image left in the stated window",
+      "right": "moves toward image right in the stated window"
+    }
+  },
+  "wall_contact_at_specified_time": {
+    "event": "whether the body is in contact with the wall at the specified time",
+    "allowed_labels": [
+      "contact",
+      "detached"
+    ],
+    "label_definitions": {
+      "contact": "touching the wall/support at the stated time",
+      "detached": "not touching it at the stated time"
+    }
+  },
+  "which_pendulum_first_crosses_lowest_position": {
+    "event": "which pendulum crosses its lowest position first",
+    "allowed_labels": [
+      "left_first",
+      "right_first"
+    ],
+    "label_definitions": {
+      "left_first": "the left pendulum crosses first",
+      "right_first": "the right pendulum crosses first"
+    }
+  },
+  "atwood_equilibrium_or_motion": {
+    "event": "whether the Atwood pulley system remains stationary or moves",
+    "allowed_labels": [
+      "moving",
+      "stationary"
+    ],
+    "label_definitions": {
+      "moving": "the relevant body or system visibly moves within the evaluation window",
+      "stationary": "no visible initial motion"
+    }
+  },
+  "combined_pulley_equilibrium_or_motion": {
+    "event": "whether the combined pulley system remains stationary or moves",
+    "allowed_labels": [
+      "moving",
+      "stationary"
+    ],
+    "label_definitions": {
+      "moving": "the relevant body or system visibly moves within the evaluation window",
+      "stationary": "no visible initial motion"
+    }
+  },
+  "eccentric_wheel_initial_roll_direction": {
+    "event": "initial roll direction of the eccentric wheel",
+    "allowed_labels": [
+      "roll_left",
+      "roll_right"
+    ],
+    "label_definitions": {
+      "roll_left": "wheel centre moves left by more than 8 mm within the first 0.4 s",
+      "roll_right": "wheel centre moves right by more than 8 mm within the first 0.4 s"
+    }
+  },
+  "lever_release_under_gravity": {
+    "event": "whether the lever is held or released under gravity",
+    "allowed_labels": [
+      "held",
+      "released"
+    ],
+    "label_definitions": {
+      "held": "lever absolute angle stays below 1 degree over the shown window",
+      "released": "right end of the lever rotates down more than 12 degrees within 3 s"
+    }
+  },
+  "mobile_frame_direction_at_0p2s": {
+    "event": "horizontal direction of the mobile frame in the first 0.2 s",
+    "allowed_labels": [
+      "left",
+      "right"
+    ],
+    "label_definitions": {
+      "left": "moves toward image left in the stated window",
+      "right": "moves toward image right in the stated window"
+    }
+  },
+  "pendulum_target_contact": {
+    "event": "whether the pendulum contacts the target",
+    "allowed_labels": [
+      "hit",
+      "miss"
+    ],
+    "label_definitions": {
+      "hit": "contact with the target occurs",
+      "miss": "no contact with the target occurs"
+    }
+  },
+  "pulley_stop_support_stationary_or_moving": {
+    "event": "whether the pulley-stop support system remains stationary or moves",
+    "allowed_labels": [
+      "moving",
+      "stationary"
+    ],
+    "label_definitions": {
+      "moving": "the relevant body or system visibly moves within the evaluation window",
+      "stationary": "no visible initial motion"
+    }
+  },
+  "ramp_spring_equilibrium_stationary_or_moving": {
+    "event": "whether the ramp-spring system remains stationary or moves",
+    "allowed_labels": [
+      "moving",
+      "stationary"
+    ],
+    "label_definitions": {
+      "moving": "the relevant body or system visibly moves within the evaluation window",
+      "stationary": "no visible initial motion"
+    }
+  },
+  "slider_post_impact_direction": {
+    "event": "slider direction after impact",
+    "allowed_labels": [
+      "forward",
+      "rebound"
+    ],
+    "label_definitions": {
+      "forward": "moves forward (away from impact side)",
+      "rebound": "incoming block bounces back after impact (vx < -0.12 m/s post-impact)"
+    }
+  },
+  "sphere_hill_first_event": {
+    "event": "first event of the sphere on the hill",
+    "allowed_labels": [
+      "cross",
+      "return"
+    ],
+    "label_definitions": {
+      "cross": "object passes over the crest to the far side",
+      "return": "object rolls back toward its release side without crossing the crest"
+    }
+  },
+  "spring_initial_relative_motion": {
+    "event": "initial relative motion of the spring-connected bodies",
+    "allowed_labels": [
+      "approach",
+      "separate"
+    ],
+    "label_definitions": {
+      "approach": "object moves toward the spring / other object in the first 0.1 s",
+      "separate": "object moves away from the spring / other object in the first 0.1 s"
+    }
+  },
+  "spring_pulley_equilibrium_stationary_or_moving": {
+    "event": "whether the spring-pulley system remains stationary or moves",
+    "allowed_labels": [
+      "moving",
+      "stationary"
+    ],
+    "label_definitions": {
+      "moving": "the relevant body or system visibly moves within the evaluation window",
+      "stationary": "no visible initial motion"
+    }
+  },
+  "three_pendulums_first_bottom_crossing": {
+    "event": "which of the three pendulums first crosses its lowest position",
+    "allowed_labels": [
+      "left_first",
+      "middle_first",
+      "right_first"
+    ],
+    "label_definitions": {
+      "left_first": "the left pendulum crosses first",
+      "middle_first": "the middle pendulum crosses first",
+      "right_first": "the right pendulum crosses first"
+    }
+  }
+}

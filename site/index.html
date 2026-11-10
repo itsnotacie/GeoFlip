@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="GeoFlip Preview: Benchmarking Geometry-Sensitive Physics in Video Generation. Paper, benchmark examples, evaluation protocol, and results." name="description"/>
+<meta content="#ffffff" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="GeoFlip Preview: Benchmarking Geometry-Sensitive Physics in Video Generation" property="og:title"/>
+<meta content="482 paired scenes across six physical categories test geometry-induced outcome flips in video generation." property="og:description"/>
+<title>GeoFlip Preview: Benchmarking Geometry-Sensitive Physics in Video Generation</title>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="assets/vendor/bulma.min.css" rel="stylesheet"/>
+
+<link href="assets/vendor/osworld-base.css" rel="stylesheet"/><link href="assets/vendor/osworld-layout.css" rel="stylesheet"/><link href="assets/vendor/osworld-official-match.css" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/>
+<script defer="" src="app.js"></script>
+</head>
+<body class="minimal-home">
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+
+<section aria-labelledby="paper-title" class="hero osworld-hero" id="home">
+<div class="hero-body">
+<div class="container is-max-desktop">
+<p aria-hidden="true" class="hero-overline"></p>
+<div class="osworld-hero-grid">
+<div class="osworld-hero-copy">
+<h1 class="title is-1 publication-title" id="paper-title">
+<span class="hero-title-line hero-title-main">GeoFlip Preview: Benchmarking</span>
+<span class="hero-title-line hero-title-subtitle">Geometry-Sensitive Physics in Video Generation</span>
+</h1>
+<div class="is-size-5 publication-authors">
+<div aria-label="Paper authors" class="author-list"><span class="author-entry"><span class="author-block">Yuqi Li</span><sup class="author-affiliation-mark">1</sup><sup class="equal-contribution-mark" title="Equal contribution">*</sup></span>
+<span class="author-entry"><span class="author-block">Junming Liu</span><sup class="author-affiliation-mark">2</sup><sup class="equal-contribution-mark" title="Equal contribution">*</sup></span>
+<span class="author-entry"><span class="author-block">Bowen Hu</span><sup class="author-affiliation-mark">3</sup></span>
+<span class="author-entry"><span class="author-block">Ruize Niu</span><sup class="author-affiliation-mark">4</sup></span>
+<span class="author-entry"><span class="author-block">Huiran Duan</span><sup class="author-affiliation-mark">1</sup></span>
+<span class="author-entry"><span class="author-block">Ming-Hsuan Yang</span><sup class="author-affiliation-mark">5</sup></span>
+<span class="author-entry"><span class="author-block">Yingli Tian</span><sup class="author-affiliation-mark">1</sup></span>
+<span class="author-entry"><span class="author-block">Hao Wu</span><sup class="author-affiliation-mark">6</sup><sup class="equal-contribution-mark" title="Corresponding author">†</sup></span>
+</div>
+<div aria-label="Author affiliations" class="author-affiliation-list"><span class="affiliation-entry"><sup>1</sup>City University of New York</span>
+<span class="affiliation-entry"><sup>2</sup>University of Melbourne</span>
+<span class="affiliation-entry"><sup>3</sup>Sun Yat-sen University</span>
+<span class="affiliation-entry"><sup>4</sup>The Chinese University of Hong Kong</span>
+<span class="affiliation-entry"><sup>5</sup>University of California, Merced</span>
+<span class="affiliation-entry"><sup>6</sup>Carnegie Mellon University</span>
+</div>
+<div class="author-equal-note"><span><sup>*</sup> Equal contribution</span> <span class="corresponding-note"><sup>†</sup> Corresponding author</span></div>
+</div>
+<div class="publication-links"><span class="link-block"><a class="external-link button is-normal is-rounded is-dark" href="https://arxiv.org/pdf/2610.42002v2" rel="noopener noreferrer" target="_blank"><span>Paper</span></a></span><span class="link-block"><a class="external-link button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2610.42002v2" rel="noopener noreferrer" target="_blank"><span>arXiv</span></a></span><span class="link-block"><a class="external-link button is-normal is-rounded is-dark" href="https://github.com/itsnotacie/GeoFlip" rel="noopener noreferrer" target="_blank"><span>Code</span></a></span><span class="link-block"><a class="external-link button is-normal is-rounded is-dark" href="https://huggingface.co/datasets/DreamingLow/GeoFlip" rel="noopener noreferrer" target="_blank"><span>Dataset</span></a></span><span class="link-block"><a class="external-link button is-normal is-rounded is-dark" href="#results"><span>Leaderboard</span></a></span><span class="link-block"><a class="external-link button is-normal is-rounded is-dark" href="#citation"><span>Citation</span></a></span></div>
+</div>
+<div aria-labelledby="examples-title" class="osworld-hero-figure geoflip-examples" id="explore">
+
+<h2 class="sr-only" id="examples-title">Geometry-induced outcome flips</h2>
+<p class="section-intro">Select a physical mechanism. The prompt stays fixed; only the initial geometry changes.</p>
+<div class="video-comparison">
+<div aria-label="Physical category" class="category-tabs" role="tablist">
+<button aria-controls="scene-panel" aria-selected="true" class="button is-small category-tab" data-category="support" id="tab-support" role="tab" tabindex="0"> Support</button>
+<button aria-controls="scene-panel" aria-selected="false" class="button is-small category-tab" data-category="torque" id="tab-torque" role="tab" tabindex="-1"> Torque</button>
+<button aria-controls="scene-panel" aria-selected="false" class="button is-small category-tab" data-category="gravity" id="tab-gravity" role="tab" tabindex="-1"> Gravity</button>
+<button aria-controls="scene-panel" aria-selected="false" class="button is-small category-tab" data-category="contact" id="tab-contact" role="tab" tabindex="-1"> Contact</button>
+<button aria-controls="scene-panel" aria-selected="false" class="button is-small category-tab" data-category="elastic" id="tab-elastic" role="tab" tabindex="-1"> Elastic</button>
+<button aria-controls="scene-panel" aria-selected="false" class="button is-small category-tab" data-category="pulley" id="tab-pulley" role="tab" tabindex="-1"> Pulleys</button>
+</div>
+<div aria-labelledby="tab-support" id="scene-panel" role="tabpanel">
+<div class="comparison-description"><div><span class="tiny-label" id="scene-category">SUPPORT &amp; STATIC STABILITY</span><h3 id="scene-title">Will the block stay or fall?</h3></div><p id="scene-description">Increase the overhang. The reference changes from stable to falling; the model must respond to this geometric difference.</p></div>
+<div class="comparison-grid">
+<div class="condition-header"><span class="condition-letter">A</span><span id="condition-a-title">Smaller overhang</span></div>
+<div class="condition-header"><span class="condition-letter">B</span><span id="condition-b-title">Larger overhang</span></div>
+<figure class="video-cell reference-cell"><div class="video-wrap"><video aria-label="Condition A simulation reference" controls="" id="ref-a" muted="" playsinline="" poster="assets/support-a.webp" preload="metadata"><source src="assets/support-a-reference.mp4" type="video/mp4"/><source src="assets/support-a-reference.webm" type="video/webm"/></video></div><figcaption>Reference · <span class="reference-event" id="outcome-a">Stable</span></figcaption></figure>
+<figure class="video-cell reference-cell"><div class="video-wrap"><video aria-label="Condition B simulation reference" controls="" id="ref-b" muted="" playsinline="" poster="assets/support-b.webp" preload="metadata"><source src="assets/support-b-reference.mp4" type="video/mp4"/><source src="assets/support-b-reference.webm" type="video/webm"/></video></div><figcaption>Reference · <span class="reference-event" id="outcome-b">Falls</span></figcaption></figure>
+<figure class="video-cell model-cell"><div class="video-wrap"><video aria-label="Condition A Wan2.2 generation" controls="" id="model-a" muted="" playsinline="" poster="assets/support-a-model.webp" preload="metadata"><source src="assets/support-a-model.mp4" type="video/mp4"/><source src="assets/support-a-model.webm" type="video/webm"/></video></div><figcaption>Wan2.2-I2V-A14B</figcaption></figure>
+<figure class="video-cell model-cell"><div class="video-wrap"><video aria-label="Condition B Wan2.2 generation" controls="" id="model-b" muted="" playsinline="" poster="assets/support-b-model.webp" preload="metadata"><source src="assets/support-b-model.mp4" type="video/mp4"/><source src="assets/support-b-model.webm" type="video/webm"/></video></div><figcaption>Wan2.2-I2V-A14B</figcaption></figure>
+</div>
+<div class="playback-controls" hidden="" id="playback-controls"><button aria-label="Play all four videos" class="play-button" id="play-pair"><span aria-hidden="true">▶</span><span id="play-label">Play together</span></button><button aria-label="Restart all four videos" class="replay-button" id="replay-pair">↺</button><label class="sr-only" for="timeline">Shared video timeline</label><input id="timeline" max="1000" min="0" step="1" type="range" value="0"/><output for="timeline" id="time-display">0.0 / — s</output><span class="playback-status" id="playback-status" role="status">Loading videos…</span></div>
+<div class="experiment-takeaway"><span aria-hidden="true">↳</span><p id="scene-takeaway"><strong>Plausible motion can still be wrong.</strong> In the paper’s overhang example, Wan2.2 makes the block fall in both conditions, missing the outcome flip.</p></div>
+</div>
+</div>
+<p class="figure-note">Labels show the simulation outcomes.</p>
+<noscript><p>Enable JavaScript to switch categories and synchronize playback. The videos above have native playback controls.</p></noscript>
+
+</div>
+</div>
+<div aria-label="GeoFlip headline statistics" class="hero-metrics">
+<div class="metric-card">
+<span class="metric-value">482</span>
+<span class="metric-label">Scene pairs</span>
+</div>
+<div class="metric-card">
+<span class="metric-value">964</span>
+<span class="metric-label">Reference videos</span>
+</div>
+<div class="metric-card has-compact-label">
+<span class="metric-value">6</span>
+<span class="metric-label metric-label-nowrap">Physical categories</span>
+</div>
+<div class="metric-card">
+<span class="metric-value">16</span>
+<span class="metric-label">Evaluated models</span>
+</div>
+<div class="metric-card">
+<span class="metric-value">3</span>
+<span class="metric-label">Evaluation dimensions</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="abstract-title" class="section abstract-section" id="abstract">
+<div class="container is-max-desktop">
+
+<div class="columns is-centered has-text-centered section-heading visual-heading"><div class="column is-four-fifths"><h2 class="title is-2" id="abstract-title">Abstract</h2></div></div>
+<div class="content abstract-copy"><p>Video generation models synthesize realistic motion, but can they change physical outcomes in response to changes in initial geometry?
+We introduce GeoFlip , a video generation benchmark centered on physical outcome flips induced by geometry.
+With shared physical settings and textual prompts held fixed, GeoFlip applies controlled interventions to support extent, object placement, and mechanism configuration, constructing paired scenes with contrasting reference events, such as remaining stable versus falling or tipping.
+These pairs test whether models translate geometric differences in the first frame into correct physical evolution.
+The benchmark comprises 482 scene pairs and 964 reference videos across six physical categories, with reference outcomes established through procedural scene construction, physics simulation, and numerical validation and verification of physical events.
+We evaluate 16 models for image to video generation along three dimensions: event correctness, structural integrity, and similarity to reference videos.
+We examine evaluation consistency with independent vision language judges.
+On the 442 conditions shared by all models, the highest event correctness averaged across tasks is 27.98%, revealing substantial limitations in physical generation conditioned on geometry.
+Further analysis shows that model strengths vary across physical mechanisms and that the three evaluation dimensions capture distinct capabilities.
+Typical failures include ignoring geometric changes, generating incorrect object motion, bending rigid objects, and introducing additional components.
+Rank correlations between judges reach 0.906 for event correctness and 0.929 for structural integrity.
+By combining controlled geometric interventions, verifiable physical references, and multidimensional evaluation, GeoFlip provides a systematic benchmark for assessing progress from visual realism toward physical consistency conditioned on geometry.</p></div>
+
+</div>
+</section>
+<section aria-labelledby="benchmark-title" class="section" id="benchmark">
+<div class="container is-max-desktop">
+<div class="columns is-centered has-text-centered section-heading visual-heading"><div class="column is-four-fifths"><h2 class="title is-2" id="benchmark-title">The GeoFlip Benchmark</h2></div></div>
+<div class="content scientific-text">
+<p>GeoFlip contains <strong>482 scene pairs</strong> and <strong>964 reference videos</strong> across six physical categories: support and static stability, torque-driven rotation, constrained gravitational dynamics, contact and impact, elastic interaction, and pulley-mediated coupling.</p>
+<p>We construct paired scenes through controlled edits to support extent, object placement, or mechanism configuration. Reference outcomes are established through physics simulation, numerical validation, and rendered-video checks. A pair enters the core benchmark only when both conditions pass validation and their reference events differ.</p>
+</div><figure class="paper-figure">
+<a aria-label="Open benchmark overview figure at full size" class="figure-link" href="assets/benchmark-overview.webp" rel="noopener noreferrer" target="_blank"><img alt="GeoFlip overview: controlled overhang and lever-arm interventions yield opposing reference outcomes, while video generators can repeat the same event. The benchmark contains 482 pairs across six physical mechanisms." fetchpriority="high" height="910" src="assets/benchmark-overview.webp" width="1704"/></a>
+<figcaption>Benchmark overview. Geometry interventions create paired reference events across six physical mechanisms.</figcaption>
+</figure>
+<figure class="paper-figure">
+<a aria-label="Open construction and evaluation protocol figure" class="figure-link" href="assets/evaluation-protocol.webp" rel="noopener noreferrer" target="_blank"><img alt="Construction and evaluation protocol: geometry interventions generate paired scenes, simulation validates reference events, and generated videos are assessed for event correctness, structural integrity, and reference similarity." height="774" loading="lazy" src="assets/evaluation-protocol.webp" width="1650"/></a>
+<figcaption><strong>Construction and evaluation protocol.</strong> Models generate independently from the first frames. Reference labels are reserved for event scoring; structural judgments and PSNR/SSIM provide complementary assessments.</figcaption>
+</figure>
+<h3 class="subsection-title">Evaluation Metrics</h3>
+<div class="content scientific-text">
+<ul class="metric-list">
+<li><strong>Event correctness:</strong> balanced accuracy within each task, followed by an equal-weight average across tasks.</li>
+<li><strong>Structural integrity:</strong> the task-macro proportion of conditions labeled structurally clear. Flagged and uncertain judgments remain in the denominator.</li>
+<li><strong>Reference similarity:</strong> PSNR and SSIM on the separate 40-clip evaluation set.</li>
+</ul>
+</div>
+</div>
+</section>
+<section aria-labelledby="results-title" class="section section-light" id="results">
+<div class="container is-max-desktop">
+<div class="columns is-centered has-text-centered section-heading visual-heading"><div class="column is-four-fifths"><h2 class="title is-2" id="results-title">Leaderboard</h2></div></div>
+<p class="section-deck">Results from Table 2 of the paper. Event correctness and structural integrity use<br class="desktop-break"/> the same <strong>442 conditions across 34 tasks</strong>; PSNR and SSIM use the separate <strong>40-clip set</strong>.</p>
+<div class="leaderboard-root" id="leaderboard"><div class="leaderboard leaderboard-panel"><div class="table-toolbar leaderboard-controls"><div><h3>Results on the shared evaluation set</h3><span>Paper v2 · Table 2</span></div><label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">Filter models</span><input autocomplete="off" id="model-search" placeholder="Find a model…" type="search"/></label></div><div aria-label="Model comparison results" class="table-scroll leaderboard-table-wrap" role="region" tabindex="0"><table class="table is-fullwidth geoflip-results" id="results-table"><caption class="sr-only">Paper v2 model results. Event and structure use 442 shared conditions and 34 tasks. PSNR and SSIM use the separate 40-clip set. Lower mean rank is better.</caption><thead><tr><th scope="col">Rank</th><th scope="col">Model</th><th aria-sort="none" data-sort="event" scope="col"><button data-sort="event">Event <span>↑</span></button></th><th aria-sort="none" data-sort="structure" scope="col"><button data-sort="structure">Structure <span>↑</span></button></th><th aria-sort="none" data-sort="psnr" scope="col"><button data-sort="psnr">PSNR <span>↑</span></button></th><th aria-sort="none" data-sort="ssim" scope="col"><button data-sort="ssim">SSIM <span>↑</span></button></th><th aria-sort="ascending" data-sort="mean" scope="col"><button data-sort="mean">Mean rank <span>↓</span></button></th></tr></thead><tbody id="results-body">
+<tr data-event="27.98" data-mean="3.17" data-model="Wan2.2-I2V-A14B" data-order="0" data-psnr="28.68" data-rank="1" data-ssim="0.9659" data-structure="34.38"><td><span class="rank-badge">1</span></td><td class="model-name">Wan2.2-I2V-A14B</td><td><span class="best-score">27.98</span></td><td>34.38</td><td>28.68</td><td><span class="best-score">0.9659</span></td><td>3.17</td></tr>
+<tr data-event="23.06" data-mean="3.67" data-model="MiniMax-H3" data-order="1" data-psnr="28.38" data-rank="2" data-ssim="0.96" data-structure="48.31"><td><span class="rank-badge">2</span></td><td class="model-name">MiniMax-H3</td><td>23.06</td><td>48.31</td><td>28.38</td><td>0.9600</td><td>3.67</td></tr>
+<tr data-event="26.69" data-mean="4.33" data-model="LingBot-World-Fast" data-order="2" data-psnr="21.88" data-rank="3" data-ssim="0.906" data-structure="60.81"><td><span class="rank-badge">3</span></td><td class="model-name">LingBot-World-Fast</td><td>26.69</td><td><span class="best-score">60.81</span></td><td>21.88</td><td>0.9060</td><td>4.33</td></tr>
+<tr data-event="18.41" data-mean="5.83" data-model="LTX-Video-2B" data-order="3" data-psnr="29.87" data-rank="4" data-ssim="0.9494" data-structure="38.13"><td><span class="rank-badge">4</span></td><td class="model-name">LTX-Video-2B</td><td>18.41</td><td>38.13</td><td><span class="best-score">29.87</span></td><td>0.9494</td><td>5.83</td></tr>
+<tr data-event="24.38" data-mean="6.0" data-model="HunyuanVideo-1.5-I2V" data-order="4" data-psnr="26.37" data-rank="5" data-ssim="0.9301" data-structure="29.12"><td><span class="rank-badge">5</span></td><td class="model-name">HunyuanVideo-1.5-I2V</td><td>24.38</td><td>29.12</td><td>26.37</td><td>0.9301</td><td>6.00</td></tr>
+<tr data-event="22.53" data-mean="6.0" data-model="Wan2.1-I2V-14B-480P" data-order="5" data-psnr="23.78" data-rank="5" data-ssim="0.9157" data-structure="41.84"><td><span class="rank-badge">5</span></td><td class="model-name">Wan2.1-I2V-14B-480P</td><td>22.53</td><td>41.84</td><td>23.78</td><td>0.9157</td><td>6.00</td></tr>
+<tr data-event="21.1" data-mean="6.17" data-model="Cosmos3-Super" data-order="6" data-psnr="25.99" data-rank="7" data-ssim="0.9008" data-structure="51.55"><td><span class="rank-badge">7</span></td><td class="model-name">Cosmos3-Super</td><td>21.10</td><td>51.55</td><td>25.99</td><td>0.9008</td><td>6.17</td></tr>
+<tr data-event="17.66" data-mean="7.0" data-model="VBVR-Wan2.2" data-order="7" data-psnr="28.05" data-rank="8" data-ssim="0.9627" data-structure="32.66"><td><span class="rank-badge">8</span></td><td class="model-name">VBVR-Wan2.2</td><td>17.66</td><td>32.66</td><td>28.05</td><td>0.9627</td><td>7.00</td></tr>
+<tr data-event="16.87" data-mean="7.67" data-model="DynamiCrafter-1024" data-order="8" data-psnr="23.24" data-rank="9" data-ssim="0.9024" data-structure="59.01"><td><span class="rank-badge">9</span></td><td class="model-name">DynamiCrafter-1024</td><td>16.87</td><td>59.01</td><td>23.24</td><td>0.9024</td><td>7.67</td></tr>
+<tr data-event="13.0" data-mean="9.67" data-model="SVD-XT" data-order="9" data-psnr="27.3" data-rank="10" data-ssim="0.9446" data-structure="27.08"><td><span class="rank-badge">10</span></td><td class="model-name">SVD-XT</td><td>13.00</td><td>27.08</td><td>27.30</td><td>0.9446</td><td>9.67</td></tr>
+<tr data-event="19.91" data-mean="10.17" data-model="CogVideoX-5B-I2V" data-order="10" data-psnr="18.64" data-rank="11" data-ssim="0.8716" data-structure="14.79"><td><span class="rank-badge">11</span></td><td class="model-name">CogVideoX-5B-I2V</td><td>19.91</td><td>14.79</td><td>18.64</td><td>0.8716</td><td>10.17</td></tr>
+<tr data-event="19.22" data-mean="10.17" data-model="SkyReels-V2-I2V-14B" data-order="11" data-psnr="18.14" data-rank="11" data-ssim="0.9214" data-structure="13.84"><td><span class="rank-badge">11</span></td><td class="model-name">SkyReels-V2-I2V-14B</td><td>19.22</td><td>13.84</td><td>18.14</td><td>0.9214</td><td>10.17</td></tr>
+<tr data-event="15.56" data-mean="12.83" data-model="I2VGen-XL" data-order="12" data-psnr="19.46" data-rank="13" data-ssim="0.8629" data-structure="7.65"><td><span class="rank-badge">13</span></td><td class="model-name">I2VGen-XL</td><td>15.56</td><td>7.65</td><td>19.46</td><td>0.8629</td><td>12.83</td></tr>
+<tr data-event="15.22" data-mean="13.33" data-model="CogVideoX1.5-5B-I2V" data-order="13" data-psnr="18.54" data-rank="14" data-ssim="0.9086" data-structure="0.0"><td><span class="rank-badge">14</span></td><td class="model-name">CogVideoX1.5-5B-I2V</td><td>15.22</td><td>0.00</td><td>18.54</td><td>0.9086</td><td>13.33</td></tr>
+<tr data-event="10.28" data-mean="14.33" data-model="HunyuanVideo-I2V-720P" data-order="14" data-psnr="16.95" data-rank="15" data-ssim="0.8566" data-structure="10.93"><td><span class="rank-badge">15</span></td><td class="model-name">HunyuanVideo-I2V-720P</td><td>10.28</td><td>10.93</td><td>16.95</td><td>0.8566</td><td>14.33</td></tr>
+<tr data-event="4.21" data-mean="15.67" data-model="SkyReels-V1-I2V" data-order="15" data-psnr="11.69" data-rank="16" data-ssim="0.6251" data-structure="5.27"><td><span class="rank-badge">16</span></td><td class="model-name">SkyReels-V1-I2V</td><td>4.21</td><td>5.27</td><td>11.69</td><td>0.6251</td><td>15.67</td></tr>
+</tbody></table></div><p class="table-status" id="table-status" role="status"></p><div class="table-footnote"><strong>Evaluation scope matters.</strong> Event and structure are task-macro percentages on the same 442 conditions spanning 34 tasks, judged by GPT. PSNR (dB) and SSIM use a separate 40-clip set. Overall mean rank equally weights event rank, structure rank, and reference-similarity rank; the last averages PSNR and SSIM ranks. Lower mean rank is better. Equal scores share a rank. Column sorting preserves the paper’s overall ranks.</div></div></div>
+<div class="results-links"><a download="" href="assets/paper-results.csv">Download results (CSV)</a><a href="https://arxiv.org/html/2610.42002v2#S4" rel="noopener noreferrer" target="_blank">Full experimental results ↗</a></div>
+<h3 class="subsection-title">Key Findings</h3>
+<div class="content scientific-text">
+<ul>
+<li><strong>Correct events and intact structures are distinct capabilities.</strong> Wan2.2 leads event correctness at <strong>27.98%</strong>, while LingBot-World-Fast leads structural integrity at <strong>60.81%</strong>.</li>
+<li><strong>Visual similarity does not imply physical correctness.</strong> LTX-Video-2B has the highest PSNR (<strong>29.87 dB</strong>), with <strong>18.41%</strong> event correctness.</li>
+<li><strong>Performance varies across mechanisms.</strong> Different models lead different physical categories; an overall ranking does not establish uniform geometry sensitivity.</li>
+</ul>
+</div>
+<figure class="paper-figure">
+<a aria-label="Open performance across physical categories figure" class="figure-link" href="assets/category-results.webp" rel="noopener noreferrer" target="_blank"><img alt="Paper figure 5: event correctness and structural integrity across six physical mechanisms, with a paired block-stack example." height="842" loading="lazy" src="assets/category-results.webp" width="1700"/></a>
+<figcaption><strong>Performance across physical mechanisms.</strong> Event and structure scores reveal different strengths. In the paired stack example, moving the top block flips the reference outcome from stable to collapsed.</figcaption>
+</figure>
+</div>
+</section>
+<section aria-labelledby="failures-title" class="section" id="failures">
+<div class="container is-max-desktop">
+<div class="columns is-centered has-text-centered section-heading visual-heading"><div class="column is-four-fifths"><h2 class="title is-2" id="failures-title">Failure Modes</h2></div></div>
+<div class="content scientific-text"><p>Qualitative comparisons reveal three recurring failures: missing the geometry-induced outcome flip, producing the right event label through incorrect object motion, and violating structural integrity by bending rigid bodies or introducing extra components.</p></div>
+<div class="finding-layout"><figure class="paper-figure">
+<a aria-label="Open failure cases figure" class="figure-link" href="assets/failure-cases.webp" rel="noopener noreferrer" target="_blank"><img alt="Paper figure 6: MiniMax misses a chair tipping flip; Wan2.2 moves additional blocks; SkyReels bends a rigid body; I2VGen creates extra fragments." height="400" loading="lazy" src="assets/failure-cases.webp" width="850"/></a>
+<figcaption><strong>Three types of physical failure.</strong> Outcome labels alone can miss errors in the motion of individual objects and in the preservation of the physical mechanism.</figcaption>
+</figure></div>
+</div>
+</section>
+<section aria-labelledby="reliability-title" class="section section-light" id="reliability">
+<div class="container is-max-desktop">
+<div class="columns is-centered has-text-centered section-heading visual-heading"><div class="column is-four-fifths"><h2 class="title is-2" id="reliability-title">Evaluation Reliability</h2></div></div>
+<div class="columns is-vcentered reliability-columns">
+<div class="column is-half"><figure class="paper-figure"><a aria-label="Open cross-judge consistency figure" class="figure-link" href="assets/judge-comparison.webp" rel="noopener noreferrer" target="_blank"><img alt="Cross-judge score comparisons for 16 models, with Spearman rank correlation 0.906 for events and 0.929 for structure." height="770" loading="lazy" src="assets/judge-comparison.webp" width="850"/></a></figure></div>
+<div class="column is-half content">
+<p>On a separate <strong>346-condition</strong> subset evaluated by both GPT and Opus, model rankings remain strongly correlated:</p>
+<ul><li>Event correctness: <strong>Spearman ρ = 0.906</strong></li><li>Structural integrity: <strong>Spearman ρ = 0.929</strong></li></ul>
+<p>Absolute structure scores differ more substantially between judges, making structural assessment the main source of judge sensitivity.</p>
+<p><a href="https://arxiv.org/html/2610.42002v2#S4.S5" rel="noopener noreferrer" target="_blank">See Section 4.5 of the paper.</a></p>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="citation-title" class="section" id="citation">
+<div class="container is-max-desktop">
+<div class="citation-heading"><div class="columns is-centered has-text-centered section-heading visual-heading"><div class="column is-four-fifths"><h2 class="title is-2" id="citation-title">BibTeX</h2></div></div><button class="button is-small" hidden="" id="copy-citation">Copy BibTeX</button></div>
+<div class="citation-block"><pre><code id="bibtex">@misc{li2026geoflippreview,
+  title={GeoFlip Preview: Benchmarking Geometry-Sensitive Physics in Video Generation},
+  author={Yuqi Li and Junming Liu and Bowen Hu and Ruize Niu and Huiran Duan
+          and Ming-Hsuan Yang and Yingli Tian and Hao Wu},
+  year={2026},
+  eprint={2610.42002},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2610.42002}
+}</code></pre></div>
+<p aria-live="polite" class="copy-status" id="copy-status" role="status"></p>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container is-max-desktop"><div class="content footer-content"><p>GeoFlip Preview · <a href="https://arxiv.org/abs/2610.42002v2" rel="noopener noreferrer" target="_blank">arXiv:2610.42002v2</a></p><p><a href="assets/vendor/NOTICE.txt">Third-party notices</a></p></div></div>
+</footer>
+</body>
+</html>

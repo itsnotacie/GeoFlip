@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geoflip-eval"
+version = "0.1.0"
+description = "GeoFlip dataset downloads, video evaluation, prompts, and scoring"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+download = ["huggingface_hub>=0.24,<3"]
+video = ["av>=12", "Pillow>=10", "numpy>=1.24", "opencv-python-headless>=4.8"]
+http = ["requests>=2.31"]
+test = ["pytest>=8"]
+
+[project.scripts]
+geoflip = "geoflip.cli:main"
+
+[tool.setuptools]
+packages = ["geoflip"]
+
+[tool.setuptools.package-data]
+geoflip = ["prompts/*.json", "prompts/*.txt"]

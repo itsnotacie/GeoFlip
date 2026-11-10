@@ -1,0 +1,27 @@
+GeoFlip project-page notices
+
+OSWorld 2.0
+Website: https://osworld-v2.xlang.ai/
+The hero, author/affiliation list, resource buttons, headline statistics, and
+section-heading HTML are reused with GeoFlip research content substituted.
+The following stylesheets are copied without modification from that website:
+  static/css/index.css -> osworld-base.css
+  stylesheets/index.css -> osworld-layout.css
+  static/css/osworld-official-match.css -> osworld-official-match.css
+GeoFlip-specific video and table adaptations are in styles.css and app.js.
+No OSWorld research content, branding, media, scripts, or remote fonts are used.
+No separate website-specific license was found in the downloaded HTML/CSS.
+No new license is asserted for the OSWorld files.
+
+Nerfies project-page template (earlier publication structure)
+Website: https://nerfies.github.io/
+Source: https://github.com/nerfies/nerfies.github.io
+License: Creative Commons Attribution-ShareAlike 4.0 International
+https://creativecommons.org/licenses/by-sa/4.0/
+Earlier template adaptations retain this attribution. This license does not
+extend to the copied OSWorld files or to research text, results, and media.
+
+Bulma 0.9.1
+Unmodified stylesheet from the Nerfies website.
+Source: https://github.com/jgthms/bulma
+MIT license; see Bulma-LICENSE.txt.
